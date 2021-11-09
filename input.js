@@ -10,6 +10,8 @@ function checkValid() {
     const email = document.getElementById('email')
     console.log(agreement)
     if (firstname.value !== '' && lastname.value !== '' && agreement.checked == true && ValidateEmail(email) == true) {
+        document.getElementById("load").classList.add("loader");
+        document.getElementById("Submit").style.display = "none";
         setTimeout(function() { alert("Thanks for signing up"); }, 3000);
     } else {
         firstname.classList.add("invalid")
@@ -33,5 +35,5 @@ function checkValid() {
 function ValidateEmail(email) {
     const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(email.value);
-    console.log("help")
 }
+// let btn = document.querySelector('button');
